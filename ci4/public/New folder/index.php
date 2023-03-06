@@ -18,11 +18,11 @@
 		<nav>
 			<h2 class="logo">My<span>Profile</span></h2>
 			<ul>
-			<li><a href="index">About Me</a></li>
-			<li><a href="favorites">My Favorites</a></li>
+			<li><a href="index.php">About Me</a></li>
+			<li><a href="favorites.php">My Favorites</a></li>
 			<li><a href="#">Art and Photography</a></li>
-			<li><a href="guests">Guests</a></li>
-			<li><a href="contact">Contact</a></li>
+			<li><a href="guests.php">Guests</a></li>
+			<li><a href="contact.php">Contact</a></li>
 			</ul>
 			
 			<a href="#" class="btn">Subscribe</a>

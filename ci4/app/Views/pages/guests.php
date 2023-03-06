@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Page</title>
+	<title>Guests</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" re="stylesheet">
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	
+
 	<div class="hero">
 		<nav>
 			<h2 class="logo">My<span>Profile</span></h2>
@@ -29,12 +29,39 @@
 			
 		</nav>
 		
-		<div class="content">
-			<h4>Hello, I am</h4>
-			<h1><span>John Rafael</span> Solomon</h1>
-			<h3>EMC191</h3>
+		<div class="content" style="background-color:white;">
+			
+		<h4>Guests</h4>
 		
-		
+		<?php
+	$servername = "192.168.150.213";
+	$username = "webprogmi212";
+	$password = "b3ntRhino98";
+	$dbname = "webprogmi212";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, name, email FROM jrsolomon_Guests";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["name"]. "<br>Email: " . $row["email"]. "<br><br>";
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
+
+
+
 		</div>
 		<div class="share">
 			<p>Lets Connect</p>
